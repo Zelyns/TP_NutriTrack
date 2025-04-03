@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriTrack</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="dashboard">
+    <h1>NutriTrack</h1>
+    <div id="meal-form">
+      <h2>Ajouter un repas</h2>
+      <form id="meal-form">
+        <input type="text" id="meal-name" placeholder="Nom du repas" required>
+        <input type="number" id="meal-calories" placeholder="Calories" required>
+        <input type="number" id="meal-proteins" placeholder="Protéines" required>
+        <input type="number" id="meal-carbs" placeholder="Glucides" required>
+        <input type="number" id="meal-fats" placeholder="Lipides" required>
+        <button type="submit">Ajouter</button>
+      </form>
+    </div>
+
+    <h2>Repas ajoutés</h2>
+    <ul id="meal-list"></ul>
+
+    <h2>Objectifs Nutritionnels</h2>
+    <div id="goals"></div>
+  </div>
+  <div id="goal-form">
+    <h2>Ajouter des objectifs nutritionnels</h2>
+    <form id="goals-form"> 
+      <input type="number" id="daily-calories" placeholder="Calories journalières" required> 
+      <input type="number" id="daily-proteins" placeholder="Protéines journalières" required> 
+      <input type="number" id="daily-carbs" placeholder="Glucides journaliers" required> 
+      <input type="number" id="daily-fats" placeholder="Lipides journaliers" required> 
+      <button type="submit">Ajouter Objectifs</button>
+    </form>
+  </div>
+  <script src="./scripts/dashboard.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/mealForm.js"></script>
+</body>
+</html>
