@@ -1,3 +1,4 @@
+// definition du modele Goal pour MongoDB
 const mongoose = require('mongoose');
 
 const goalSchema = new mongoose.Schema({

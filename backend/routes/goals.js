@@ -1,12 +1,14 @@
+// definie les routes pour l'objectif de l'utilisateur
+
 const express = require('express');
 const Goal = require('../models/goal');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
   try {
-    const { dailyCalories, dailyProteins, dailyCarbs, dailyFats } = req.body;
+    const { dailyCalories, dailyProteins, dailyCarbs, dailyFats } = req.body; // recupere les donnees
 
-    const existingGoal = await Goal.findOne();
+    const existingGoal = await Goal.findOne(); // verifie si un objectif existe deja
     if (existingGoal) {
       existingGoal.dailyCalories = dailyCalories;
       existingGoal.dailyProteins = dailyProteins;
@@ -16,7 +18,7 @@ router.post('/', async (req, res) => {
       return res.status(200).json(existingGoal);
     }
 
-    const newGoal = new Goal({ dailyCalories, dailyProteins, dailyCarbs, dailyFats });
+    const newGoal = new Goal({ dailyCalories, dailyProteins, dailyCarbs, dailyFats });// cree un nouvel objectif
     await newGoal.save();
     res.status(201).json(newGoal);
   } catch (err) {
@@ -24,7 +26,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { // recupere l'objectif
   try {
     const goal = await Goal.findOne();
     if (goal) {
